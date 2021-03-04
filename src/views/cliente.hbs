@@ -1,0 +1,50 @@
+<div class="col-md-6 offset-md-3">
+    <div class="card">
+        <div class="card-header">
+            <h2>Cliente</h2>
+        </div>
+        <a href="/" class="btn btn-warning">Home</a>
+        <div class="card-footer">
+            <form action="/nuevo-cliente" method="POST">
+                <div class="form-group">
+                    <input type="text" name="nombre" placeholder="Nombre" class="form-control" autofocus>
+                </div>
+                <div class="form-group">
+                    <input type="text" name="apellido" placeholder="Apellidos" class="form-control">
+                </div>
+                <div class="form-group">
+                    <input type="text" name="email" placeholder="Email" class="form-control">
+                </div>
+                <div class="form-group">
+                    <input type="text" name="telefono" placeholder="Teléfono" class="form-control">
+                </div>
+                <div class="form-group">
+                    <input type="text" name="direccion" placeholder="Dirección de Residencia" class="form-control">
+                </div>
+                <button class="btn btn-primary btn-block">
+                    Agregar
+                </button>
+                <div class="card-body">
+                    {{#if Cliente}}
+                    <ul class="list-group">
+                        {{#each Cliente}}
+                        <li class="list-group-item d-flex justify-content-between">
+                            {{nombre}}
+                            {{apellido}} -
+                            {{email}} -
+                            {{telefono}} -
+                            {{direccion}}
+                        </li>
+                        <a href="/eliminar-cliente/{{@key}}" class="btn btn-danger">
+                            Eliminar
+                        </a>
+                        {{/each}}
+                    </ul>
+                    {{else}}
+                    <p>No hay contactos</p>
+                    {{/if}}
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,46 @@
+<div class="col-md-6 offset-md-3">
+    <div class="card">
+        <div class="card-header">
+            <h2>Producto</h2>
+        </div>
+        <a href="/" class="btn btn-warning">Home</a>
+        <div class="card-footer">
+            <form action="/nuevo-producto" method="POST">
+                <div class="form-group">
+                    <input type="text" name="nombre" placeholder="Nombre producto" class="form-control" autofocus>
+                </div>
+                <div class="form-group">
+                    <input type="text" name="tipo" placeholder="Tipo producto" class="form-control">
+                </div>
+                <div class="form-group">
+                    <input type="text" name="descripcion" placeholder="Descripción producto" class="form-control">
+                </div>
+                <div class="form-group">
+                    <input type="number" name="cantidad" placeholder="Cantidad producto" class="form-control">
+                </div>
+                <button class="btn btn-primary btn-block">
+                    Agregar
+                </button>
+                <div class="card-body">
+                    {{#if Producto}}
+                    <ul class="list-group">
+                        {{#each Producto}}
+                        <li class="list-group-item d-flex justify-content-between">
+                            {{nombre}} -
+                            {{tipo}} -
+                            {{descripcion}} -
+                            {{cantidad}}
+                        </li>
+                        <a href="/eliminar-producto/{{@key}}" class="btn btn-danger">
+                            Eliminar
+                        </a>
+                        {{/each}}
+                    </ul>
+                    {{else}}
+                    <p>No hay contactos</p>
+                    {{/if}}
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

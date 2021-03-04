@@ -1,0 +1,51 @@
+<div class="col-md-6 offset-md-3">
+    <div class="card">
+        <div class="card-header">
+            <h2>Sede</h2>
+        </div>
+            <a href="/" class="btn btn-warning">Home</a>
+        <div class="card-footer">
+            <form action="/nueva-sede" method="POST">
+                <div class="form-group">
+                    <input type="text" name="ciudad" placeholder="Ciudad sede" class="form-control">
+                </div>
+                <div class="form-group">
+                    <input type="text" name="direccion" placeholder="Dirección sede" class="form-control">
+                </div>
+                <div class="form-group">
+                    <input type="text" name="email" placeholder="Email sede" class="form-control">
+                </div>
+                <div class="form-group">
+                    <input type="text" name="telefono1" placeholder="Teléfono 1 Sede" class="form-control">
+                </div>
+                <div class="form-group">
+                    <input type="text" name="telefono2" placeholder="Teléfono 2 Sede" class="form-control">
+                </div>
+
+                <button class="btn btn-primary btn-block">
+                    Agregar
+                </button>
+                <div class="card-body">
+                    {{#if Sede}}
+                    <ul class="list-group">
+                        {{#each Sede}}
+                        <li class="list-group-item d-flex justify-content-between">
+                            {{ciudad}} -
+                            {{direccion}} -
+                            {{email}} -
+                            {{telefono1}} -
+                            {{telefono2}}
+                        </li>
+                        <a href="/eliminar-sede/{{@key}}" class="btn btn-danger">
+                            Eliminar
+                        </a>
+                        {{/each}}
+                    </ul>
+                    {{else}}
+                    <p>No hay contactos</p>
+                    {{/if}}
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

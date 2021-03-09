@@ -1,13 +1,13 @@
 const { Router } = require('express');
 const router = Router();
 const admin = require('firebase-admin');
-const serviceAccount = require("../../node-pruebas-firebase-firebase-adminsdk-e79hn-8971a3a370.json");
+const serviceAccount = require("../../aqui buscamos la tura que necesita de node para la conexión");
 
 
 //iniciación del admin
 admin.initializeApp({
     credential: admin.credential.cert(serviceAccount),
-    databaseURL: 'https://node-pruebas-firebase-default-rtdb.firebaseio.com'
+    databaseURL: 'aquí enlazamos la conexión a firebase'
 });
 
 const db = admin.database();
